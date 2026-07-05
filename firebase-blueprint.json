@@ -1,0 +1,217 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with role, points, and password",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "password": { "type": "string" },
+        "points": { "type": "number" },
+        "role": { "type": "string" },
+        "referralCode": { "type": "string" },
+        "referredBy": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "email", "points", "role", "referralCode", "createdAt"]
+    },
+    "Service": {
+      "title": "Service",
+      "description": "Available SMM or Game Service",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "category": { "type": "string" },
+        "platform": { "type": "string" },
+        "nameAr": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "descriptionAr": { "type": "string" },
+        "descriptionEn": { "type": "string" },
+        "pricePer1000": { "type": "number" },
+        "minOrder": { "type": "number" },
+        "maxOrder": { "type": "number" },
+        "fixedPrice": { "type": "number" },
+        "packageSize": { "type": "number" }
+      },
+      "required": ["id", "category", "platform", "nameAr", "nameEn"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "SMM or Game Order submitted by a user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "serviceId": { "type": "string" },
+        "serviceNameAr": { "type": "string" },
+        "serviceNameEn": { "type": "string" },
+        "platform": { "type": "string" },
+        "category": { "type": "string" },
+        "quantity": { "type": "number" },
+        "targetLinkOrId": { "type": "string" },
+        "extraDetails": { "type": "string" },
+        "totalCost": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "userEmail", "serviceId", "serviceNameAr", "serviceNameEn", "platform", "category", "quantity", "targetLinkOrId", "totalCost", "status", "createdAt"]
+    },
+    "PaymentRequest": {
+      "title": "PaymentRequest",
+      "description": "Deposit/recharge request made by a user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "amountPoints": { "type": "number" },
+        "amountCash": { "type": "number" },
+        "method": { "type": "string" },
+        "transactionId": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "userEmail", "amountPoints", "amountCash", "method", "transactionId", "status", "createdAt"]
+    },
+    "Referral": {
+      "title": "Referral",
+      "description": "Tracks referrers and referred users",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "referrerId": { "type": "string" },
+        "referredId": { "type": "string" },
+        "referredEmail": { "type": "string" },
+        "pointsEarned": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "referrerId", "referredId", "referredEmail", "pointsEarned", "createdAt"]
+    },
+    "UserPost": {
+      "title": "UserPost",
+      "description": "User buy/sell advertisement post",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "type": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "string" },
+        "image": { "type": "string" },
+        "status": { "type": "string" },
+        "contactMethod": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "userEmail", "type", "title", "description", "price", "status", "createdAt"]
+    },
+    "MediationRequest": {
+      "title": "MediationRequest",
+      "description": "Buy/sell mediation escrow request",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "amount": { "type": "string" },
+        "notes": { "type": "string" },
+        "adminNotes": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "userEmail", "type", "description", "amount", "notes", "status", "createdAt"]
+    },
+    "AdminLog": {
+      "title": "AdminLog",
+      "description": "Administrative actions audit log",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "adminId": { "type": "string" },
+        "adminEmail": { "type": "string" },
+        "actionType": { "type": "string" },
+        "details": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "adminId", "adminEmail", "actionType", "details", "createdAt"]
+    },
+    "SystemSettings": {
+      "title": "SystemSettings",
+      "description": "System-wide settings",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "telegramChannel": { "type": "string" },
+        "telegramDetail": { "type": "string" },
+        "whatsappLink": { "type": "string" },
+        "whatsappDetail": { "type": "string" }
+      },
+      "required": ["id", "telegramChannel", "telegramDetail", "whatsappLink", "whatsappDetail"]
+    },
+    "AppNotification": {
+      "title": "AppNotification",
+      "description": "Real-time user or admin notification",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "titleAr": { "type": "string" },
+        "titleEn": { "type": "string" },
+        "messageAr": { "type": "string" },
+        "messageEn": { "type": "string" },
+        "type": { "type": "string" },
+        "targetId": { "type": "string" },
+        "read": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "titleAr", "titleEn", "messageAr", "messageEn", "type", "read", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "User",
+      "description": "Collection of all system users"
+    },
+    "services": {
+      "schema": "Service",
+      "description": "Collection of SMM & game services"
+    },
+    "orders": {
+      "schema": "Order",
+      "description": "SMM/game orders"
+    },
+    "payments": {
+      "schema": "PaymentRequest",
+      "description": "Cash deposit recharge requests"
+    },
+    "referrals": {
+      "schema": "Referral",
+      "description": "Referral connections"
+    },
+    "posts": {
+      "schema": "UserPost",
+      "description": "User marketplace postings"
+    },
+    "mediations": {
+      "schema": "MediationRequest",
+      "description": "Mediation escrow requests"
+    },
+    "admin_logs": {
+      "schema": "AdminLog",
+      "description": "Audit trail of admin operations"
+    },
+    "settings": {
+      "schema": "SystemSettings",
+      "description": "System-wide contact settings"
+    },
+    "notifications": {
+      "schema": "AppNotification",
+      "description": "User or Admin alerts and notifications"
+    }
+  }
+}
