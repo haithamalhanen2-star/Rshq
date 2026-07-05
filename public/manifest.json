@@ -1,1 +1,27 @@
-
+{
+  "background_color": "#4338ca",
+  "dir": "rtl",
+  "display": "standalone",
+  "name": "النعيمي",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "النعيمي",
+  "start_url": "/",
+  "theme_color": "#4338ca",
+  "icons": [
+    {
+      "src": "https://rshq.onrender.com/favicon.ico",
+      "type": "image/x-icon",
+      "isSquare": false,
+      "isPng": false,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 0,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ],
+  "description": "منصة النعيمي لخدمات السوشيال ميديا وشحن الألعاب",
+  "lang": "ar"
+}
