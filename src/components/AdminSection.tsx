@@ -39,6 +39,10 @@ interface AdminSectionProps {
   onRefreshParent: () => void;
   refreshTrigger?: number;
 }
+const toEnglishDigits = (str: string): string => {
+  const arabicDigits = '٠١٢٣٤٥٦٧٨٩';
+  return str.replace(/[٠-٩]/g, (d) => String(arabicDigits.indexOf(d)));
+};
 
 export default function AdminSection({ lang, onRefreshParent, refreshTrigger }: AdminSectionProps) {
   const renderPlatformIconMini = (platformId: string) => {
