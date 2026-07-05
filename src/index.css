@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Tajawal", "Inter", system-ui, sans-serif;
+  
+  /* Eye-friendly warm sepia/linen palette instead of pure harsh white and cold slate */
+  --color-white: #fdfcf9;
+  --color-slate-50: #f6f3eb;
+  --color-slate-100: #eee9dc;
+  --color-slate-200: #e0d8c9;
+  --color-slate-300: #ccbfad;
+  --color-slate-400: #9e917d;
+  --color-slate-500: #7a6e5a;
+  --color-slate-600: #5e5343;
+  --color-slate-700: #463d31;
+  --color-slate-800: #312a22;
+  --color-slate-900: #1d1914;
+  --color-slate-950: #0f0d0a;
+}
