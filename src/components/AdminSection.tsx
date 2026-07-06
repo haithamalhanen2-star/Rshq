@@ -1079,63 +1079,72 @@ export default function AdminSection({ lang, onRefreshParent, refreshTrigger }: 
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
-                    {serviceForm.category === 'smm' ? (
-                      <>
-                        {/* Price per 1000 SMM */}
-                        <div>
-                          <label className="block text-slate-600 text-xs font-bold mb-1 text-right">{t.pricePer1000Label}</label>
-                          <input
-                            
-                            
-                           type="text"
-inputMode="numeric"
-value={serviceForm.pricePer1000}
-onChange={e => setServiceForm({ ...serviceForm, pricePer1000: parseInt(toEnglishDigits(e.target.value)) || 0 })} 
-                        </div>
-                        {/* Package Size placeholder */}
-                        <div>
-                          <label className="block text-slate-600 text-xs font-bold mb-1 text-right">{t.packageSizeLabel}</label>
+<div className="grid grid-cols-2 gap-3">
+                      {serviceForm.category === 'smm' ? (
+                        <>
+                          {/* Price per 1000 SMM */}
+                          <div>
+                            <label className="block text-slate-600 text-xs font-bold mb-1 text-right">{t.pricePer1000Label}</label>
+                            <input
+                              type="text"
+                              inputMode="numeric"
+                              value={serviceForm.pricePer1000}
+                              onChange={e => setServiceForm({ ...serviceForm, pricePer1000: parseInt(toEnglishDigits(e.target.value)) || 0 })}
+                              className="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl py-2 px-3 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                            />
+                          </div>
+                          {/* Package Size placeholder */}
+                          <div>
+                            <label className="block text-slate-600 text-xs font-bold mb-1 text-right">{t.packageSizeLabel}</label>
+                            <input
+                              type="text"
+                              inputMode="numeric"
+                              value={serviceForm.packageSize}
+                              onChange={e => setServiceForm({ ...serviceForm, packageSize: parseInt(toEnglishDigits(e.target.value)) || 0 })}
+                              className="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl py-2 px-3 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                            />
+                          </div>
+                        </>
+                      ) : (
+                        /* Fixed Price Games */
+                        <div className="col-span-2">
+                          <label className="block text-slate-600 text-xs font-bold mb-1 text-right">{t.fixedPriceLabel}</label>
                           <input
                             type="text"
-inputMode="numeric"
-value={serviceForm.packageSize}
-onChange={e => setServiceForm({ ...serviceForm, packageSize: parseInt(toEnglishDigits(e.target.value)) || 0 })}
+                            inputMode="numeric"
+                            value={serviceForm.fixedPrice}
+                            onChange={e => setServiceForm({ ...serviceForm, fixedPrice: parseInt(toEnglishDigits(e.target.value)) || 0 })}
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl py-2 px-3 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                          />
                         </div>
-                      </>
-                    ) : (
-                      /* Fixed Price Games */
-                      <div className="col-span-2">
-                        <label className="block text-slate-600 text-xs font-bold mb-1 text-right">{t.fixedPriceLabel}</label>
-                        <input
-                          type="text"
-inputMode="numeric"
-value={serviceForm.fixedPrice}
-onChange={e => setServiceForm({ ...serviceForm, fixedPrice: parseInt(toEnglishDigits(e.target.value)) || 0 })}
-                      </div>
-                    )}
-                  </div>
+                      )}
+                    </div>
 
-                  {serviceForm.category === 'smm' && (
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <label className="block text-slate-600 text-xs font-bold mb-1 text-right">{t.minOrderLabel}</label>
-                        <input
-                          type="text"
-inputMode="numeric"
-value={serviceForm.minOrder}
-onChange={e => setServiceForm({ ...serviceForm, minOrder: parseInt(toEnglishDigits(e.target.value)) || 0 })}
-                      </div>
-                      <div>
+                    {serviceForm.category === 'smm' && (
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-slate-600 text-xs font-bold mb-1 text-right">{t.minOrderLabel}</label>
+                          <input
+                            type="text"
+                            inputMode="numeric"
+                            value={serviceForm.minOrder}
+                            onChange={e => setServiceForm({ ...serviceForm, minOrder: parseInt(toEnglishDigits(e.target.value)) || 0 })}
+                            className="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl py-2 px-3 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                          />
+                        </div>
+                         <div>
                         <label className="block text-slate-600 text-xs font-bold mb-1 text-right">{t.maxOrderLabel}</label>
                         <input
                           type="text"
 inputMode="numeric"
 value={serviceForm.maxOrder}
 onChange={e => setServiceForm({ ...serviceForm, maxOrder: parseInt(toEnglishDigits(e.target.value)) || 0 })}
+                      className="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl py-2 px-3 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-indigo-500/20"    
+                      />    
                       </div>
                     </div>
                   )}
+                  
 
                   <button
                     type="submit"
