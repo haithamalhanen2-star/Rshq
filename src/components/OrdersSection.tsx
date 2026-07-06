@@ -181,7 +181,7 @@ export default function OrdersSection({ lang, user, refreshTrigger }: OrdersSect
                   </div>
                   <div>
                     <span className="text-slate-400 block mb-0.5">{lang === 'ar' ? 'الكمية' : 'Quantity'}</span>
-                    <span className="text-slate-800 font-bold font-mono">{order.quantity.toLocaleString()}</span>
+                    <span className="text-slate-800 font-bold font-mono">{order.quantity.toLocaleString('en-US')}</span>
                   </div>
                   <div>
                     <span className="text-slate-400 block mb-0.5">{lang === 'ar' ? 'التكلفة الإجمالية' : 'Total Cost'}</span>
