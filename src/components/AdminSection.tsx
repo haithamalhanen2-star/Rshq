@@ -1295,7 +1295,7 @@ onChange={e => setServiceForm({ ...serviceForm, maxOrder: parseInt(toEnglishDigi
                 </div>
 
                 <div className="flex justify-between items-center bg-indigo-50/45 p-2.5 rounded-xl border border-indigo-100/40 text-xs px-4">
-                  <span className="text-indigo-700 font-extrabold">{userItem.points.toLocaleString()} {t.points}</span>
+                  <span className="text-indigo-700 font-extrabold">{userItem.points.toLocaleString('en-US')} {t.points}</span>
                   <span className="text-slate-500 font-bold">{t.userPointsCol}</span>
                 </div>
 
