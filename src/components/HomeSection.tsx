@@ -549,7 +549,7 @@ export default function HomeSection({ lang, user, onOrderPlaced, refreshTrigger 
               {t.userPoints}
             </p>
             <p className="text-2xl font-black text-emerald-300">
-              {user.points.toLocaleString()}
+              {user.points.toLocaleString('en-US')}
             </p>
             <p className="text-indigo-200 text-[10px] mt-1">
               {lang === 'ar' ? 'نقاط جاهزة' : 'Points Active'}
@@ -911,8 +911,8 @@ export default function HomeSection({ lang, user, onOrderPlaced, refreshTrigger 
                           </span>
                           <span className="text-base font-black text-white block">
                             {selectedService.category !== 'games' 
-                              ? (selectedService.pricePer1000?.toLocaleString() ?? '0') 
-                              : (selectedService.fixedPrice?.toLocaleString() ?? '0')
+                              ? (selectedService.pricePer1000?.toLocaleString('en-US') ?? '0') 
+                              : (selectedService.fixedPrice?.toLocaleString('en-US') ?? '0')
                             }
                           </span>
                         </div>
@@ -921,7 +921,7 @@ export default function HomeSection({ lang, user, onOrderPlaced, refreshTrigger 
                             {lang === 'ar' ? 'اقل طلب' : 'Min Order'}
                           </span>
                           <span className="text-base font-black text-white block">
-                            {selectedService.category !== 'games' ? (selectedService.minOrder?.toLocaleString() ?? '100') : '1'}
+                            {selectedService.category !== 'games' ? (selectedService.minOrder?.toLocaleString('en-US') ?? '100') : '1'}
                           </span>
                         </div>
                         <div className="space-y-1">
@@ -929,7 +929,7 @@ export default function HomeSection({ lang, user, onOrderPlaced, refreshTrigger 
                             {lang === 'ar' ? 'اقصى طلب' : 'Max Order'}
                           </span>
                           <span className="text-base font-black text-white block truncate px-1">
-                            {selectedService.category !== 'games' ? (selectedService.maxOrder?.toLocaleString() ?? '1,000,000') : '1'}
+                            {selectedService.category !== 'games' ? (selectedService.maxOrder?.toLocaleString('en-US') ?? '1,000,000') : '1'}
                           </span>
                         </div>
                       </div>
@@ -967,7 +967,7 @@ export default function HomeSection({ lang, user, onOrderPlaced, refreshTrigger 
                             {lang === 'ar' ? 'نقاطك الكلية' : 'Your Total Points'}
                           </span>
                           <span className="text-base font-black text-slate-800 leading-tight block">
-                            {user.points?.toLocaleString() ?? 0} {t.points}
+                            {user.points?.toLocaleString('en-US') ?? 0} {t.points}
                           </span>
                         </div>
                       </div>
@@ -982,7 +982,7 @@ export default function HomeSection({ lang, user, onOrderPlaced, refreshTrigger 
                             {lang === 'ar' ? 'النقاط التي سيتم استقطاعها منك' : 'Points To Deduct'}
                           </span>
                           <span className="text-base font-black text-indigo-700 leading-tight block">
-                            {calculateCost(selectedService, quantity)?.toLocaleString() ?? 0} {t.points}
+                            {calculateCost(selectedService, quantity)?.toLocaleString('en-US') ?? 0} {t.points}
                           </span>
                         </div>
                       </div>
